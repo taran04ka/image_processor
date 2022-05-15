@@ -1,0 +1,4 @@
+D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir
+D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir
+D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
