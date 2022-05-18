@@ -30,35 +30,49 @@ Matrix<T>::Matrix(std::size_t r, std::size_t c, T v) {
 
 template<typename T>
 Matrix<T>::Matrix(const Matrix &current) {
+#if MATRIX_DATA_TYPE == ARRAY_2D
+    for
+#else
     std::copy(current.begin(), current.end(), std::back_inserter(m_));
+#endif
 }
 
 template<typename T>
 Matrix<T>::~Matrix() {
+#if MATRIX_DATA_TYPE == ARRAY_2D
     for (std::size_t count = 0; count < m_[0].size(); count++)
         delete[] m_[count];
     delete[] m_;
+#else
+#endif
 }
 
 template<typename T>
 std::size_t Matrix<T>::get_nrows() {
-    //return m_.size();  //arrays
+#if MATRIX_DATA_TYPE == ARRAY_2D
     unsigned int counter = 0;
     while (m_!= nullptr){
         counter++;
         m_++;
     }
     return counter;
+#else
+    return m_.size();
+#endif
+
 }
 
 template<typename T>
 std::size_t Matrix<T>::get_ncols() {
-    //return m_[0].size();
+#if MATRIX_DATA_TYPE == ARRAY_2D
     unsigned int counter = 0;
     while (*m_ != nullptr){
         counter++;
         m_++;
     }
+#else
+    return m_[0].size();
+#endif
 }
 
 byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo) {
