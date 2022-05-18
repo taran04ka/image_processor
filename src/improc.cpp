@@ -31,7 +31,15 @@ Matrix<T>::Matrix(std::size_t r, std::size_t c, T v) {
 template<typename T>
 Matrix<T>::Matrix(const Matrix &current) {
 #if MATRIX_DATA_TYPE == ARRAY_2D
-    
+    m_ = new T*[current.get_nrows()];
+    for (int i = 0; i < current.get_nrows(); i++)
+        m_[i] = new int[current.get_ncols()];
+
+    for (int i = 0; i < current.get_nrows(); i++) {
+        for (int j = 0; j < current.get_ncols(); j++) {
+            m_[i][j] = current[i][j];
+        }
+    }
 #else
     std::copy(current.begin(), current.end(), std::back_inserter(m_));
 #endif
