@@ -31,7 +31,7 @@ Matrix<T>::Matrix(std::size_t r, std::size_t c, T v) {
 template<typename T>
 Matrix<T>::Matrix(const Matrix &current) {
 #if MATRIX_DATA_TYPE == ARRAY_2D
-    for
+    
 #else
     std::copy(current.begin(), current.end(), std::back_inserter(m_));
 #endif
