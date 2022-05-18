@@ -4,6 +4,62 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iterator>
+
+
+template<typename T>
+Matrix<T>::Matrix(std::size_t r, std::size_t c, T v) {
+#if MATRIX_DATA_TYPE == ARRAY_2D
+    m_ = new T*[r];
+    for (std::size_t count = 0; count < r; count++) //for the T** type
+        m_[count] = new T[c];
+    for (std::size_t i = 0; i < r; i++) {
+        for (std::size_t j = 0; j < c; j++) {
+            m_[i][j]=v;
+        }
+    }
+#else
+    for (std::size_t i = 0; i < r; i++) {
+        for (std::size_t j = 0; j < c; j++) {
+            m_.push_back(v);
+        }
+    }
+#endif
+}
+
+
+template<typename T>
+Matrix<T>::Matrix(const Matrix &current) {
+    std::copy(current.begin(), current.end(), std::back_inserter(m_));
+}
+
+template<typename T>
+Matrix<T>::~Matrix() {
+    for (std::size_t count = 0; count < m_[0].size(); count++)
+        delete[] m_[count];
+    delete[] m_;
+}
+
+template<typename T>
+std::size_t Matrix<T>::get_nrows() {
+    //return m_.size();  //arrays
+    unsigned int counter = 0;
+    while (m_!= nullptr){
+        counter++;
+        m_++;
+    }
+    return counter;
+}
+
+template<typename T>
+std::size_t Matrix<T>::get_ncols() {
+    //return m_[0].size();
+    unsigned int counter = 0;
+    while (*m_ != nullptr){
+        counter++;
+        m_++;
+    }
+}
 
 byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo) {
     BITMAPFILEHEADER header;

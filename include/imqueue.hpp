@@ -1,4 +1,12 @@
 #ifndef IMAGE_PROCESSOR__SKELETON_IMQUEUE_HPP
 #define IMAGE_PROCESSOR__SKELETON_IMQUEUE_HPP
 
+class TaskData {
+
+};
+
+class TaskQueue {
+
+};
+
 #endif //IMAGE_PROCESSOR__SKELETON_IMQUEUE_HPP

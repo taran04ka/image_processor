@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/bitmap.h
+windows.h
+-
+wingdi.h
+-
+stdlib.h
+-
+stdint.h
+-
+
+../include/improc.hpp
+bitmap.h
+../include/bitmap.h
+
+D:/ProgramData/CLion/agh/improc/src/improc.cpp
+improc.hpp
+D:/ProgramData/CLion/agh/improc/src/improc.hpp
+bitmap.h
+D:/ProgramData/CLion/agh/improc/src/bitmap.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+iterator
+-
+
