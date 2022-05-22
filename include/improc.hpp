@@ -30,7 +30,10 @@ private:
 };
 
 class Image{
+public:
 
+    Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPINFOHEADER hdr);
+    Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPINFOHEADER hdr, data_type data);
 };
 
 /**
