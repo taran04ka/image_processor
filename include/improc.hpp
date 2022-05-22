@@ -28,12 +28,23 @@ public:
 private:
     data_type m_;
 };
-
+;
 class Image{
 public:
+    BITMAPINFO* bmi = nullptr;
+    BITMAPFILEHEADER hdr;
+    size_t w;
+    size_t h;
+    Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPFILEHEADER hdr);
+    Image(double data): Image(h, w, bmi, hdr) {}
+    Image (const Image& i1);
+    const BITMAPFILEHEADER& get_bitmapheader();
+    BITMAPINFO* get_bitmapinfo();
 
-    Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPINFOHEADER hdr);
-    Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPINFOHEADER hdr, data_type data);
+private:
+    double data;
+    size_t w;
+    size_t h;
 };
 
 /**
