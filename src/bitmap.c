@@ -160,8 +160,7 @@ SaveDIBitmap(const char* filename, BITMAPINFO* info, byte* bits) {
     return EXIT_SUCCESS;
 }
 
-byte*
-LoadDIBitmap(const char* filename, BITMAPINFO** info, BITMAPFILEHEADER* header)
+byte* LoadDIBitmap(const char* filename, BITMAPINFO** info, BITMAPFILEHEADER* header)
 {
     FILE* fp;          /* Open file pointer */
     byte* bits;        /* Bitmap pixel bits */

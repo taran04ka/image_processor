@@ -1,12 +1,14 @@
 #include "improc.hpp"
 #include "bitmap.h"
 
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <iterator>
 #include <cstring>
 #include <sstream>
+#include <functional>
 
 
 template<typename T>
@@ -101,23 +103,30 @@ void Matrix<T>::print() const {
     }
 }
 
-byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo) {
+class FileIOError:public std::runtime_error{
+public:
+    FileIOError(const std::string message) : std::runtime_error(message) {}
+};
+
+Image load_bitmap(const std::string& filepath) {
     BITMAPFILEHEADER header;
-    byte* bitmapBytes = LoadDIBitmap(filepath, BitmapInfo, &header);
+    BITMAPINFO *BitmapInfo = nullptr;
+    byte* bitmapBytes = LoadDIBitmap(filepath.c_str(), &BitmapInfo, &header);
 
     if (!bitmapBytes) {
         // Error when reading the input file.
-        exit(-1);
+        throw FileIOError("A pointer to bitmapBytes was not created\n");
     }
+    if(!BitmapInfo) throw FileIOError("A pointer to Bitmapinfo is still a nullpointer\n");
 
-    const size_t h = (size_t) (*BitmapInfo)->bmiHeader.biHeight;
-    const size_t w = (size_t) (*BitmapInfo)->bmiHeader.biWidth;
-    const size_t bits_per_pixel = (*BitmapInfo)->bmiHeader.biBitCount;
+    const size_t h = (size_t) BitmapInfo->bmiHeader.biHeight;
+    const size_t w = (size_t) BitmapInfo->bmiHeader.biWidth;
+    const size_t bits_per_pixel = BitmapInfo->bmiHeader.biBitCount;
 
     /* see: https://en.wikipedia.org/wiki/BMP_file_format#Pixel_storage */
     size_t row_size = (bits_per_pixel * w + 31) / 32 * 4;
 
-    printf("Successfully loaded a %lux%lu image - %s.\n\n", h, w, filepath);
+    printf("Successfully loaded a %lux%lu image - %s.\n\n", h, w, filepath.c_str());
 
     byte** image_array = (byte**) malloc(sizeof(byte*) * h);
     for (size_t i = 0; i < h; i++) {
@@ -142,17 +151,17 @@ byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo) {
 
     free(bitmapBytes);
 
-    return image_array;
+    return {h,w,BitmapInfo,header};
 }
 
-int save_bitmap(const char* filepath, byte** image, BITMAPINFO* BitmapInfo) {
-
-    const size_t h = (size_t) BitmapInfo->bmiHeader.biWidth;
-    const size_t w = (size_t) BitmapInfo->bmiHeader.biHeight;
-    const size_t bits_per_pixel = BitmapInfo->bmiHeader.biBitCount;
+int save_bitmap(const std::string& filename, const Image& image) {
+    if(!image.get_bitmapinfo()) throw (FileIOError("In save_bitmap function for a given Image instance its handle to BITMAPINFO structure is a null pointer\n"));
+    const size_t h = (size_t) image.get_bitmapinfo()->bmiHeader.biWidth;
+    const size_t w = (size_t) image.get_bitmapinfo()->bmiHeader.biHeight;
+    const size_t bits_per_pixel = image.get_bitmapinfo()->bmiHeader.biBitCount;
     const size_t row_size = (bits_per_pixel * w + 31) / 32 * 4;
 
-    byte* bitmapBytes = (byte*) malloc(sizeof(byte) * BitmapInfo->bmiHeader.biSizeImage);
+    byte* bitmapBytes = (byte*) malloc(sizeof(byte) * image.get_bitmapinfo()->bmiHeader.biSizeImage);
     byte* writer = bitmapBytes;
 
     const size_t padding = row_size - w;
@@ -170,7 +179,7 @@ int save_bitmap(const char* filepath, byte** image, BITMAPINFO* BitmapInfo) {
         }
     }
 
-    int status = SaveDIBitmap(filepath, BitmapInfo, bitmapBytes);
+    int status = SaveDIBitmap(filename.c_str(), image.get_bitmapinfo(), bitmapBytes);
     free(bitmapBytes);
 
     return status;
@@ -200,14 +209,37 @@ std::string to_string(const Image &im, ImagePrintMode print_mode) {
                 ost<<'\n';
             }
         case NUMS:
+
             for (std::size_t i = 0; i < im.get_nrows(); i++) {
                 for (std::size_t j = 0; j < im.get_ncols(); j++) {
-                    ost<<(int)im[i][j]<<"  ";
+                    ost<<"  "<<(int)im[i][j];
                 }
                 ost<<'\n';
             }
     }
-    //eturn std::to_string(ost);
+    return ost.str();
+}
+
+using Mask = Matrix<double>;
+
+Image transform(const Image &im_in, std::function<byte(byte)> func) {
+    Image tmp(im_in);
+    for (std::size_t i = 0; i < im_in.get_nrows(); i++) {
+        for (std::size_t j = 0; j < im_in.get_ncols(); j++) {
+            func(tmp[i][j]);
+        }
+    }
+    return tmp;
+}
+
+Mask get_averaging_mask(std::size_t n) {
+    
+}
+
+Image filter(const Image &im_in, const Mask &mask) {
+    Image tmp(im_in);
+    if(!tmp[mask.get_nrows()][mask.get_ncols()]) throw FileIOError("Mask is outside ot the image\n");
+
 }
 
 Image::Image(const Image &current) : Matrix<byte>(current){

@@ -4,6 +4,7 @@
 #include "bitmap.h"
 #include <vector>
 #include <memory>
+#include <functional>
 
 #define ARRAY_2D    1
 #define VECTOR_OF_VECTORS 2
@@ -65,8 +66,8 @@ public:
         }
     }
     Image(const Image& current);
-    const BITMAPFILEHEADER& get_bitmapheader() { return hdr_; }
-    BITMAPINFO* get_bitmapinfo() { return bmi_; }
+    const BITMAPFILEHEADER& get_bitmapheader() const { return hdr_; }
+    BITMAPINFO* get_bitmapinfo() const { return bmi_; }
 };
 
 enum ImagePrintMode {
@@ -81,7 +82,7 @@ std::string to_string(const Image& im, ImagePrintMode print_mode = CHARS);
  * @param filepath File to load.
  * @return The loaded image.
  */
-extern byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo);
+Image load_bitmap(const std::string& filepath);
 
 /**
  * Save a BMP file to disk.
@@ -90,6 +91,14 @@ extern byte** load_bitmap(const char* filepath, BITMAPINFO **BitmapInfo);
  * @param image Image to save.
  * @return EXIT_SUCCESS on success or EXIT_FAILURE on failure.
  */
-extern int save_bitmap(const char* filepath, byte** image, BITMAPINFO* BitmapInfo);
+int save_bitmap(const std::string& filename, const Image& image);
+
+using Mask = Matrix<double>;
+
+Image transform(const Image& im_in, std::function<byte(byte)> func);
+
+Mask get_averaging_mask(std::size_t n);
+
+Image filter(const Image& im_in, const Mask& mask);
 
 #endif //IMAGE_PROCESSOR_IMPROC_HPP
