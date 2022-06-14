@@ -233,13 +233,42 @@ Image transform(const Image &im_in, std::function<byte(byte)> func) {
 }
 
 Mask get_averaging_mask(std::size_t n) {
-    
+    return {n,n,1.0/(n*n)};
 }
 
 Image filter(const Image &im_in, const Mask &mask) {
-    Image tmp(im_in);
-    if(!tmp[mask.get_nrows()][mask.get_ncols()]) throw FileIOError("Mask is outside ot the image\n");
+    Image new_im(im_in);
+    std::size_t mask_length = (mask.get_nrows()-1)/2;
+    for (std::size_t i = 0; i < im_in.get_nrows(); i++) {
+        for (std::size_t j = 0; j < im_in.get_ncols(); j++) {
+            byte sum = 0;
+            for (std::size_t k = i; k < i+mask.get_nrows(); k++) {
+                for (std::size_t l = j; l < j + mask.get_ncols(); l++) {
 
+                    std::size_t pixel_val;
+                    if(k < mask_length || l < mask_length || ){
+                        pixel_val = 0
+                    }else{
+                        pixel_val = im_in[k - mask_length][l - mask_length];
+                    }
+//                    if(i>=mask_length) {
+//
+//                    }
+//                    if(j>=mask_length){
+//
+//                    }
+//                    if(i+mask_length >= im_in.get_nrows()){
+//
+//                    }
+//                    if(j+mask_length >= im_in.get_ncols()){
+//
+//                    }
+                    sum += (byte)(mask[k - i][l - j] * pixel_val)
+                }
+            }
+            new_im[i][j] = sum
+        }
+    }
 }
 
 Image::Image(const Image &current) : Matrix<byte>(current){
