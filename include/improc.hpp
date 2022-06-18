@@ -8,6 +8,17 @@
 #define VECTOR_OF_VECTORS 2
 #define MATRIX_DATA_TYPE ARRAY_2D
 
+<<<<<<< Updated upstream
+=======
+struct BmpInfoDeleter {
+    void operator()(BITMAPINFO* ptr) { delete[] ptr; }
+};
+
+using BmpInfoUniquePtr = std::unique_ptr<BITMAPINFO, BmpInfoDeleter>;
+
+BmpInfoUniquePtr copy_bitmapinfo(BITMAPINFO* bmi, BITMAPFILEHEADER hdr);
+
+>>>>>>> Stashed changes
 template<class T>
 #if MATRIX_DATA_TYPE == ARRAY_2D
 using MatrixData = T**;
