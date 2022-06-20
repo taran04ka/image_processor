@@ -21,6 +21,10 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/ProgramData/CLion/agh/improc/src/improc.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/src/improc.cpp.obj"
   "D:/ProgramData/CLion/agh/improc/src/imqueue.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/src/imqueue.cpp.obj"
   "D:/ProgramData/CLion/agh/improc/test/main_gtest.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj"
+  "D:/ProgramData/CLion/agh/improc/test/test_aux.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj"
+  "D:/ProgramData/CLion/agh/improc/test/test_improc.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj"
+  "D:/ProgramData/CLion/agh/improc/test/test_imqueue.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj"
+  "D:/ProgramData/CLion/agh/improc/test/test_io.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

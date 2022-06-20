@@ -246,27 +246,15 @@ Image filter(const Image &im_in, const Mask &mask) {
                 for (std::size_t l = j; l < j + mask.get_ncols(); l++) {
 
                     std::size_t pixel_val;
-                    if(k < mask_length || l < mask_length || ){
-                        pixel_val = 0
+                    if(k < mask_length || l < mask_length || k > im_in.get_nrows() || l > im_in.get_ncols()){
+                        pixel_val = 0;
                     }else{
                         pixel_val = im_in[k - mask_length][l - mask_length];
                     }
-//                    if(i>=mask_length) {
-//
-//                    }
-//                    if(j>=mask_length){
-//
-//                    }
-//                    if(i+mask_length >= im_in.get_nrows()){
-//
-//                    }
-//                    if(j+mask_length >= im_in.get_ncols()){
-//
-//                    }
-                    sum += (byte)(mask[k - i][l - j] * pixel_val)
+                    sum += (byte)(mask[k - i][l - j] * pixel_val);
                 }
             }
-            new_im[i][j] = sum
+            new_im[i][j] = sum;
         }
     }
 }

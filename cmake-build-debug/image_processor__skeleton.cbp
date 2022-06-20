@@ -144,6 +144,18 @@
 		<Unit filename="D:/ProgramData/CLion/agh/improc/test/main_gtest.cpp">
 			<Option target="image_processor__test"/>
 		</Unit>
+		<Unit filename="D:/ProgramData/CLion/agh/improc/test/test_aux.cpp">
+			<Option target="image_processor__test"/>
+		</Unit>
+		<Unit filename="D:/ProgramData/CLion/agh/improc/test/test_improc.cpp">
+			<Option target="image_processor__test"/>
+		</Unit>
+		<Unit filename="D:/ProgramData/CLion/agh/improc/test/test_imqueue.cpp">
+			<Option target="image_processor__test"/>
+		</Unit>
+		<Unit filename="D:/ProgramData/CLion/agh/improc/test/test_io.cpp">
+			<Option target="image_processor__test"/>
+		</Unit>
 		<Unit filename="D:/ProgramData/CLion/agh/improc/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

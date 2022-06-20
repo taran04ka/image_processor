@@ -107,10 +107,66 @@ CMakeFiles/image_processor__test.dir/src/imqueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__test.dir/src/imqueue.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\imqueue.cpp -o CMakeFiles\image_processor__test.dir\src\imqueue.cpp.s
 
+CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj: CMakeFiles/image_processor__test.dir/flags.make
+CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj: CMakeFiles/image_processor__test.dir/includes_CXX.rsp
+CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj: ../test/test_aux.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__test.dir\test\test_aux.cpp.obj -c D:\ProgramData\CLion\agh\improc\test\test_aux.cpp
+
+CMakeFiles/image_processor__test.dir/test/test_aux.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__test.dir/test/test_aux.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\test\test_aux.cpp > CMakeFiles\image_processor__test.dir\test\test_aux.cpp.i
+
+CMakeFiles/image_processor__test.dir/test/test_aux.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__test.dir/test/test_aux.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\test\test_aux.cpp -o CMakeFiles\image_processor__test.dir\test\test_aux.cpp.s
+
+CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj: CMakeFiles/image_processor__test.dir/flags.make
+CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj: CMakeFiles/image_processor__test.dir/includes_CXX.rsp
+CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj: ../test/test_improc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__test.dir\test\test_improc.cpp.obj -c D:\ProgramData\CLion\agh\improc\test\test_improc.cpp
+
+CMakeFiles/image_processor__test.dir/test/test_improc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__test.dir/test/test_improc.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\test\test_improc.cpp > CMakeFiles\image_processor__test.dir\test\test_improc.cpp.i
+
+CMakeFiles/image_processor__test.dir/test/test_improc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__test.dir/test/test_improc.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\test\test_improc.cpp -o CMakeFiles\image_processor__test.dir\test\test_improc.cpp.s
+
+CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj: CMakeFiles/image_processor__test.dir/flags.make
+CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj: CMakeFiles/image_processor__test.dir/includes_CXX.rsp
+CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj: ../test/test_imqueue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__test.dir\test\test_imqueue.cpp.obj -c D:\ProgramData\CLion\agh\improc\test\test_imqueue.cpp
+
+CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\test\test_imqueue.cpp > CMakeFiles\image_processor__test.dir\test\test_imqueue.cpp.i
+
+CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\test\test_imqueue.cpp -o CMakeFiles\image_processor__test.dir\test\test_imqueue.cpp.s
+
+CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj: CMakeFiles/image_processor__test.dir/flags.make
+CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj: CMakeFiles/image_processor__test.dir/includes_CXX.rsp
+CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj: ../test/test_io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__test.dir\test\test_io.cpp.obj -c D:\ProgramData\CLion\agh\improc\test\test_io.cpp
+
+CMakeFiles/image_processor__test.dir/test/test_io.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__test.dir/test/test_io.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\test\test_io.cpp > CMakeFiles\image_processor__test.dir\test\test_io.cpp.i
+
+CMakeFiles/image_processor__test.dir/test/test_io.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__test.dir/test/test_io.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\test\test_io.cpp -o CMakeFiles\image_processor__test.dir\test\test_io.cpp.s
+
 CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj: CMakeFiles/image_processor__test.dir/flags.make
 CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj: CMakeFiles/image_processor__test.dir/includes_CXX.rsp
 CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj: ../test/main_gtest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__test.dir\test\main_gtest.cpp.obj -c D:\ProgramData\CLion\agh\improc\test\main_gtest.cpp
 
 CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.i: cmake_force
@@ -126,6 +182,10 @@ image_processor__test_OBJECTS = \
 "CMakeFiles/image_processor__test.dir/src/bitmap.c.obj" \
 "CMakeFiles/image_processor__test.dir/src/improc.cpp.obj" \
 "CMakeFiles/image_processor__test.dir/src/imqueue.cpp.obj" \
+"CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj" \
+"CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj" \
+"CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj" \
+"CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj" \
 "CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj"
 
 # External object files for target image_processor__test
@@ -134,12 +194,16 @@ image_processor__test_EXTERNAL_OBJECTS =
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/src/bitmap.c.obj
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/src/improc.cpp.obj
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/src/imqueue.cpp.obj
+image_processor__test.exe: CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj
+image_processor__test.exe: CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj
+image_processor__test.exe: CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj
+image_processor__test.exe: CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/build.make
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/linklibs.rsp
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/objects1.rsp
 image_processor__test.exe: CMakeFiles/image_processor__test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable image_processor__test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable image_processor__test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\image_processor__test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

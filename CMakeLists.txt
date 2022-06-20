@@ -7,7 +7,11 @@ set(SOURCE_FILES
         src/imqueue.cpp)
 
 set(SOURCES_FILES_TEST
-        test/main_gtest.cpp)
+        test/test_aux.cpp
+        test/test_improc.cpp
+        test/test_imqueue.cpp
+        test/test_io.cpp
+        )
 
 set(GTEST_ROOT
         D:/ProgramData/CLion/agh/mdig-agh-lang_cpp__exercises__en-b8fe6a7ea81f/googletest-master)

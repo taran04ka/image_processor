@@ -270,6 +270,102 @@ test/main_gtest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.s
 .PHONY : test/main_gtest.cpp.s
 
+test/test_aux.obj: test/test_aux.cpp.obj
+.PHONY : test/test_aux.obj
+
+# target to build an object file
+test/test_aux.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj
+.PHONY : test/test_aux.cpp.obj
+
+test/test_aux.i: test/test_aux.cpp.i
+.PHONY : test/test_aux.i
+
+# target to preprocess a source file
+test/test_aux.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_aux.cpp.i
+.PHONY : test/test_aux.cpp.i
+
+test/test_aux.s: test/test_aux.cpp.s
+.PHONY : test/test_aux.s
+
+# target to generate assembly for a file
+test/test_aux.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_aux.cpp.s
+.PHONY : test/test_aux.cpp.s
+
+test/test_improc.obj: test/test_improc.cpp.obj
+.PHONY : test/test_improc.obj
+
+# target to build an object file
+test/test_improc.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj
+.PHONY : test/test_improc.cpp.obj
+
+test/test_improc.i: test/test_improc.cpp.i
+.PHONY : test/test_improc.i
+
+# target to preprocess a source file
+test/test_improc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_improc.cpp.i
+.PHONY : test/test_improc.cpp.i
+
+test/test_improc.s: test/test_improc.cpp.s
+.PHONY : test/test_improc.s
+
+# target to generate assembly for a file
+test/test_improc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_improc.cpp.s
+.PHONY : test/test_improc.cpp.s
+
+test/test_imqueue.obj: test/test_imqueue.cpp.obj
+.PHONY : test/test_imqueue.obj
+
+# target to build an object file
+test/test_imqueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj
+.PHONY : test/test_imqueue.cpp.obj
+
+test/test_imqueue.i: test/test_imqueue.cpp.i
+.PHONY : test/test_imqueue.i
+
+# target to preprocess a source file
+test/test_imqueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.i
+.PHONY : test/test_imqueue.cpp.i
+
+test/test_imqueue.s: test/test_imqueue.cpp.s
+.PHONY : test/test_imqueue.s
+
+# target to generate assembly for a file
+test/test_imqueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.s
+.PHONY : test/test_imqueue.cpp.s
+
+test/test_io.obj: test/test_io.cpp.obj
+.PHONY : test/test_io.obj
+
+# target to build an object file
+test/test_io.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj
+.PHONY : test/test_io.cpp.obj
+
+test/test_io.i: test/test_io.cpp.i
+.PHONY : test/test_io.i
+
+# target to preprocess a source file
+test/test_io.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_io.cpp.i
+.PHONY : test/test_io.cpp.i
+
+test/test_io.s: test/test_io.cpp.s
+.PHONY : test/test_io.s
+
+# target to generate assembly for a file
+test/test_io.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_io.cpp.s
+.PHONY : test/test_io.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -295,6 +391,18 @@ help:
 	@echo ... test/main_gtest.obj
 	@echo ... test/main_gtest.i
 	@echo ... test/main_gtest.s
+	@echo ... test/test_aux.obj
+	@echo ... test/test_aux.i
+	@echo ... test/test_aux.s
+	@echo ... test/test_improc.obj
+	@echo ... test/test_improc.i
+	@echo ... test/test_improc.s
+	@echo ... test/test_imqueue.obj
+	@echo ... test/test_imqueue.i
+	@echo ... test/test_imqueue.s
+	@echo ... test/test_io.obj
+	@echo ... test/test_io.i
+	@echo ... test/test_io.s
 .PHONY : help
 
 
