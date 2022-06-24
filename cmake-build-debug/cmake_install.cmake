@@ -1,8 +1,12 @@
-# Install script for directory: D:/ProgramData/CLion/agh/improc
+# Install script for directory: /Users/erneststrychalski/Documents/GitHub/image_processor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
+<<<<<<< Updated upstream
   set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/improc")
+=======
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
+>>>>>>> Stashed changes
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +38,17 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
+<<<<<<< Updated upstream
   set(CMAKE_OBJDUMP "C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/objdump.exe")
+=======
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/cmake_install.cmake")
+
+>>>>>>> Stashed changes
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +59,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/ProgramData/CLion/agh/improc/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

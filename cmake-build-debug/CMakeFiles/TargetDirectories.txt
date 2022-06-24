@@ -1,4 +1,37 @@
+<<<<<<< Updated upstream
 D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir
 D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__test.dir
 D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/install/local.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/list_install_components.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/image_processor__debug.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/install/strip.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/install.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/CMakeFiles/image_processor__skeleton__test.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/CMakeFiles/install/local.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/CMakeFiles/install/strip.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/CMakeFiles/install.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/CMakeFiles/list_install_components.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/CMakeFiles/rebuild_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/CMakeFiles/edit_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/install/local.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/install/strip.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/install.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/gmock.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/rebuild_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/edit_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/gmock_main.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googlemock/CMakeFiles/list_install_components.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/install/local.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/list_install_components.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/rebuild_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/edit_cache.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/install/strip.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/install.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/gtest_main.dir
+/Users/erneststrychalski/Documents/GitHub/image_processor/cmake-build-debug/googletest-master/googletest/CMakeFiles/gtest.dir
+>>>>>>> Stashed changes

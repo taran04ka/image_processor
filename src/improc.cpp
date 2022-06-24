@@ -33,27 +33,61 @@ Matrix<T>::Matrix(const Matrix &current) {
 #if MATRIX_DATA_TYPE == ARRAY_2D
     for
 #else
+<<<<<<< Updated upstream
     std::copy(current.begin(), current.end(), std::back_inserter(m_));
+=======
+    for (std::size_t i = 0; i < r_; i++) {
+        m_.push_back(current[i]);
+        //std::copy(current.begin(), current.end(), std::back_inserter(m_[i]));
+    }
+>>>>>>> Stashed changes
 #endif
 }
 
+#if MATRIX_DATA_TYPE == ARRAY_2D
 template<typename T>
 Matrix<T>::~Matrix() {
+<<<<<<< Updated upstream
 #if MATRIX_DATA_TYPE == ARRAY_2D
     for (std::size_t count = 0; count < m_[0].size(); count++)
         delete[] m_[count];
     delete[] m_;
 #else
 #endif
+=======
+    for (std::size_t count = 0; count < r_; count++)
+        delete[] m_[count];
+    delete[] m_;
+>>>>>>> Stashed changes
 }
+#endif
 
 template<typename T>
+<<<<<<< Updated upstream
 std::size_t Matrix<T>::get_nrows() {
 #if MATRIX_DATA_TYPE == ARRAY_2D
     unsigned int counter = 0;
     while (m_!= nullptr){
         counter++;
         m_++;
+=======
+std::size_t Matrix<T>::get_nrows() const {
+    return r_;
+}
+
+template<typename T>
+std::size_t Matrix<T>::get_ncols() const {
+    return c_;
+}
+
+template<typename T>
+Matrix<T>::Matrix(std::size_t r, std::size_t c) : r_(r), c_(c) {
+#if MATRIX_DATA_TYPE == ARRAY_2D
+    m_ = new T*[r_];
+    for (std::size_t count = 0; count < r_; count++) {//for the T** type
+        m_[count] = new T[c_];
+        memset(m_[count], 0, c_*sizeof(T));
+>>>>>>> Stashed changes
     }
     return counter;
 #else
@@ -173,18 +207,22 @@ std::string to_string(const Image &im, ImagePrintMode print_mode) {
                 for (std::size_t j = 0; j < im.get_ncols(); j++) {
                     ost<<(char)im[i][j];
                 }
-                ost<<'\n';
-            }
+                ost<< std::endl;
+            }break;
+
         case NUMS:
 
             for (std::size_t i = 0; i < im.get_nrows(); i++) {
                 for (std::size_t j = 0; j < im.get_ncols(); j++) {
                     ost<<"  "<<(int)im[i][j];
                 }
-                ost<<'\n';
-            }
+                ost<<std::endl;
+            }break;
+
     }
-    return ost.str();
+    std::string str = ost.str();
+    str.pop_back();
+    return str;
 }
 
 using Mask = Matrix<double>;
@@ -218,6 +256,7 @@ Image filter(const Image &im_in, const Mask &mask) {
                     }else{
                         pixel_val = im_in[k - mask_length][l - mask_length];
                     }
+<<<<<<< Updated upstream
 //                    if(i>=mask_length) {
 //
 //                    }
@@ -232,11 +271,15 @@ Image filter(const Image &im_in, const Mask &mask) {
 //                          pixel_val = 0;
 //                    }
                     sum += (byte)(mask[k - i][l - j] * pixel_val)
+=======
+                    sum += (byte)(mask[k - i][l - j] * (double)pixel_val);
+>>>>>>> Stashed changes
                 }
             }
             new_im[i][j] = sum
         }
     }
+    return new_im;
 }
 
 Image::Image(const Image &current) : Matrix<byte>(current){

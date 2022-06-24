@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
 "D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\image_processor__debug.dir/objects.a
 C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\image_processor__debug.dir/objects.a @CMakeFiles\image_processor__debug.dir\objects1.rsp
 C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\image_processor__debug.dir/objects.a -Wl,--no-whole-archive -o image_processor__debug.exe -Wl,--out-implib,libimage_processor__debug.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\image_processor__debug.dir\linklibs.rsp
+=======
+/Library/Developer/CommandLineTools/usr/bin/c++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/image_processor__debug.dir/src/bitmap.c.o CMakeFiles/image_processor__debug.dir/src/improc.cpp.o CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.o CMakeFiles/image_processor__debug.dir/main.cpp.o -o image_processor__debug 
+>>>>>>> Stashed changes

@@ -6,7 +6,7 @@
 
 #define ARRAY_2D    1
 #define VECTOR_OF_VECTORS 2
-#define MATRIX_DATA_TYPE ARRAY_2D
+#define MATRIX_DATA_TYPE VECTOR_OF_VECTORS
 
 <<<<<<< Updated upstream
 =======
@@ -32,10 +32,29 @@ public:
     using data_type = MatrixData<T>;
     Matrix(std::size_t r, std::size_t c, T v);
     Matrix(const Matrix& current);
+#if MATRIX_DATA_TYPE == ARRAY_2D
     ~Matrix();
+<<<<<<< Updated upstream
     std::size_t get_nrows();
     std::size_t get_ncols();
     T& operator[] (std::size_t pos) { return m_[pos]; }
+=======
+#else
+    ~Matrix() = default;
+#endif
+    std::size_t get_nrows() const;
+    std::size_t get_ncols() const;
+    void print() const;
+#if MATRIX_DATA_TYPE == ARRAY_2D
+    T* operator[] (std::size_t pos) { return m_[pos]; }
+    const T* operator[] (std::size_t pos) const { return m_[pos]; }
+#else
+    typename MatrixData<T>::reference operator[] (std::size_t pos) {return m_[pos];}
+    typename MatrixData<T>::const_reference operator[] (std::size_t pos) const {return m_[pos];}
+#endif
+protected:
+    data_type m_;
+>>>>>>> Stashed changes
 private:
     data_type m_;
 };
