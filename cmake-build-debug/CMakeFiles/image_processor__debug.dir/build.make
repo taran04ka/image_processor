@@ -69,64 +69,64 @@ CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj: CMakeFiles/image_process
 CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj: CMakeFiles/image_processor__debug.dir/includes_C.rsp
 CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj: ../src/bitmap.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\image_processor__debug.dir\src\bitmap.c.obj -c D:\ProgramData\CLion\agh\improc\src\bitmap.c
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\image_processor__debug.dir\src\bitmap.c.obj -c D:\ProgramData\CLion\agh\improc\src\bitmap.c
 
 CMakeFiles/image_processor__debug.dir/src/bitmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/image_processor__debug.dir/src/bitmap.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ProgramData\CLion\agh\improc\src\bitmap.c > CMakeFiles\image_processor__debug.dir\src\bitmap.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ProgramData\CLion\agh\improc\src\bitmap.c > CMakeFiles\image_processor__debug.dir\src\bitmap.c.i
 
 CMakeFiles/image_processor__debug.dir/src/bitmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/image_processor__debug.dir/src/bitmap.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\bitmap.c -o CMakeFiles\image_processor__debug.dir\src\bitmap.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\bitmap.c -o CMakeFiles\image_processor__debug.dir\src\bitmap.c.s
 
 CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj: CMakeFiles/image_processor__debug.dir/flags.make
 CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj: CMakeFiles/image_processor__debug.dir/includes_CXX.rsp
 CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj: ../src/improc.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__debug.dir\src\improc.cpp.obj -c D:\ProgramData\CLion\agh\improc\src\improc.cpp
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__debug.dir\src\improc.cpp.obj -c D:\ProgramData\CLion\agh\improc\src\improc.cpp
 
 CMakeFiles/image_processor__debug.dir/src/improc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__debug.dir/src/improc.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\src\improc.cpp > CMakeFiles\image_processor__debug.dir\src\improc.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\src\improc.cpp > CMakeFiles\image_processor__debug.dir\src\improc.cpp.i
 
 CMakeFiles/image_processor__debug.dir/src/improc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__debug.dir/src/improc.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\improc.cpp -o CMakeFiles\image_processor__debug.dir\src\improc.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\improc.cpp -o CMakeFiles\image_processor__debug.dir\src\improc.cpp.s
 
 CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj: CMakeFiles/image_processor__debug.dir/flags.make
 CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj: CMakeFiles/image_processor__debug.dir/includes_CXX.rsp
 CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj: ../src/imqueue.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__debug.dir\src\imqueue.cpp.obj -c D:\ProgramData\CLion\agh\improc\src\imqueue.cpp
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__debug.dir\src\imqueue.cpp.obj -c D:\ProgramData\CLion\agh\improc\src\imqueue.cpp
 
 CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\src\imqueue.cpp > CMakeFiles\image_processor__debug.dir\src\imqueue.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\src\imqueue.cpp > CMakeFiles\image_processor__debug.dir\src\imqueue.cpp.i
 
 CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\imqueue.cpp -o CMakeFiles\image_processor__debug.dir\src\imqueue.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\src\imqueue.cpp -o CMakeFiles\image_processor__debug.dir\src\imqueue.cpp.s
 
-CMakeFiles/image_processor__debug.dir/main.c.obj: CMakeFiles/image_processor__debug.dir/flags.make
-CMakeFiles/image_processor__debug.dir/main.c.obj: CMakeFiles/image_processor__debug.dir/includes_C.rsp
-CMakeFiles/image_processor__debug.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/image_processor__debug.dir/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\image_processor__debug.dir\main.c.obj -c D:\ProgramData\CLion\agh\improc\main.c
+CMakeFiles/image_processor__debug.dir/main.cpp.obj: CMakeFiles/image_processor__debug.dir/flags.make
+CMakeFiles/image_processor__debug.dir/main.cpp.obj: CMakeFiles/image_processor__debug.dir/includes_CXX.rsp
+CMakeFiles/image_processor__debug.dir/main.cpp.obj: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\ProgramData\CLion\agh\improc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/image_processor__debug.dir/main.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\image_processor__debug.dir\main.cpp.obj -c D:\ProgramData\CLion\agh\improc\main.cpp
 
-CMakeFiles/image_processor__debug.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/image_processor__debug.dir/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ProgramData\CLion\agh\improc\main.c > CMakeFiles\image_processor__debug.dir\main.c.i
+CMakeFiles/image_processor__debug.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_processor__debug.dir/main.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\ProgramData\CLion\agh\improc\main.cpp > CMakeFiles\image_processor__debug.dir\main.cpp.i
 
-CMakeFiles/image_processor__debug.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/image_processor__debug.dir/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ProgramData\CLion\agh\improc\main.c -o CMakeFiles\image_processor__debug.dir\main.c.s
+CMakeFiles/image_processor__debug.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_processor__debug.dir/main.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\ProgramData\CLion\agh\improc\main.cpp -o CMakeFiles\image_processor__debug.dir\main.cpp.s
 
 # Object files for target image_processor__debug
 image_processor__debug_OBJECTS = \
 "CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj" \
 "CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj" \
 "CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj" \
-"CMakeFiles/image_processor__debug.dir/main.c.obj"
+"CMakeFiles/image_processor__debug.dir/main.cpp.obj"
 
 # External object files for target image_processor__debug
 image_processor__debug_EXTERNAL_OBJECTS =
@@ -134,7 +134,7 @@ image_processor__debug_EXTERNAL_OBJECTS =
 image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj
 image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj
 image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj
-image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/main.c.obj
+image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/main.cpp.obj
 image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/build.make
 image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/linklibs.rsp
 image_processor__debug.exe: CMakeFiles/image_processor__debug.dir/objects1.rsp

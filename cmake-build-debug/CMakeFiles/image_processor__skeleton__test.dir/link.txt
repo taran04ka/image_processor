@@ -1,0 +1,3 @@
+"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\image_processor__skeleton__test.dir/objects.a
+C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\ar.exe cr CMakeFiles\image_processor__skeleton__test.dir/objects.a @CMakeFiles\image_processor__skeleton__test.dir\objects1.rsp
+C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\MinGW\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\image_processor__skeleton__test.dir/objects.a -Wl,--no-whole-archive -o image_processor__skeleton__test.exe -Wl,--out-implib,libimage_processor__skeleton__test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\image_processor__skeleton__test.dir\linklibs.rsp

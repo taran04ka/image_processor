@@ -64,6 +64,39 @@ CMAKE_BINARY_DIR = D:\ProgramData\CLion\agh\improc\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -83,6 +116,18 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"D:\Programs\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,6 +161,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named image_processor__skeleton__test
+
+# Build rule for target.
+image_processor__skeleton__test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 image_processor__skeleton__test
+.PHONY : image_processor__skeleton__test
+
+# fast build rule for target.
+image_processor__skeleton__test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/build
+.PHONY : image_processor__skeleton__test/fast
+
+#=============================================================================
 # Target rules for targets named image_processor__debug
 
 # Build rule for target.
@@ -129,49 +187,88 @@ image_processor__debug/fast:
 .PHONY : image_processor__debug/fast
 
 #=============================================================================
-# Target rules for targets named image_processor__test
+# Target rules for targets named gmock_main
 
 # Build rule for target.
-image_processor__test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 image_processor__test
-.PHONY : image_processor__test
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
 
 # fast build rule for target.
-image_processor__test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/build
-.PHONY : image_processor__test/fast
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googlemock\CMakeFiles\gmock_main.dir\build.make googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
-main.obj: main.c.obj
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googlemock\CMakeFiles\gmock.dir\build.make googletest-master/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googletest\CMakeFiles\gtest.dir\build.make googletest-master/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-master\googletest\CMakeFiles\gtest_main.dir\build.make googletest-master/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/main.c.obj
-.PHONY : main.c.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-main.i: main.c.i
+main.i: main.cpp.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 src/bitmap.obj: src/bitmap.c.obj
 .PHONY : src/bitmap.obj
 
 # target to build an object file
 src/bitmap.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/bitmap.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/bitmap.c.obj
 .PHONY : src/bitmap.c.obj
 
 src/bitmap.i: src/bitmap.c.i
@@ -179,8 +276,8 @@ src/bitmap.i: src/bitmap.c.i
 
 # target to preprocess a source file
 src/bitmap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/bitmap.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/bitmap.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/bitmap.c.i
 .PHONY : src/bitmap.c.i
 
 src/bitmap.s: src/bitmap.c.s
@@ -188,8 +285,8 @@ src/bitmap.s: src/bitmap.c.s
 
 # target to generate assembly for a file
 src/bitmap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/bitmap.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/bitmap.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/bitmap.c.s
 .PHONY : src/bitmap.c.s
 
 src/improc.obj: src/improc.cpp.obj
@@ -197,8 +294,8 @@ src/improc.obj: src/improc.cpp.obj
 
 # target to build an object file
 src/improc.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/improc.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/improc.cpp.obj
 .PHONY : src/improc.cpp.obj
 
 src/improc.i: src/improc.cpp.i
@@ -206,8 +303,8 @@ src/improc.i: src/improc.cpp.i
 
 # target to preprocess a source file
 src/improc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/improc.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/improc.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/improc.cpp.i
 .PHONY : src/improc.cpp.i
 
 src/improc.s: src/improc.cpp.s
@@ -215,8 +312,8 @@ src/improc.s: src/improc.cpp.s
 
 # target to generate assembly for a file
 src/improc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/improc.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/improc.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/improc.cpp.s
 .PHONY : src/improc.cpp.s
 
 src/imqueue.obj: src/imqueue.cpp.obj
@@ -224,8 +321,8 @@ src/imqueue.obj: src/imqueue.cpp.obj
 
 # target to build an object file
 src/imqueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/imqueue.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/imqueue.cpp.obj
 .PHONY : src/imqueue.cpp.obj
 
 src/imqueue.i: src/imqueue.cpp.i
@@ -233,8 +330,8 @@ src/imqueue.i: src/imqueue.cpp.i
 
 # target to preprocess a source file
 src/imqueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/imqueue.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/imqueue.cpp.i
 .PHONY : src/imqueue.cpp.i
 
 src/imqueue.s: src/imqueue.cpp.s
@@ -242,8 +339,8 @@ src/imqueue.s: src/imqueue.cpp.s
 
 # target to generate assembly for a file
 src/imqueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/src/imqueue.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__debug.dir\build.make CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/src/imqueue.cpp.s
 .PHONY : src/imqueue.cpp.s
 
 test/main_gtest.obj: test/main_gtest.cpp.obj
@@ -251,7 +348,7 @@ test/main_gtest.obj: test/main_gtest.cpp.obj
 
 # target to build an object file
 test/main_gtest.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/main_gtest.cpp.obj
 .PHONY : test/main_gtest.cpp.obj
 
 test/main_gtest.i: test/main_gtest.cpp.i
@@ -259,7 +356,7 @@ test/main_gtest.i: test/main_gtest.cpp.i
 
 # target to preprocess a source file
 test/main_gtest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/main_gtest.cpp.i
 .PHONY : test/main_gtest.cpp.i
 
 test/main_gtest.s: test/main_gtest.cpp.s
@@ -267,7 +364,7 @@ test/main_gtest.s: test/main_gtest.cpp.s
 
 # target to generate assembly for a file
 test/main_gtest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/main_gtest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/main_gtest.cpp.s
 .PHONY : test/main_gtest.cpp.s
 
 test/test_aux.obj: test/test_aux.cpp.obj
@@ -275,7 +372,7 @@ test/test_aux.obj: test/test_aux.cpp.obj
 
 # target to build an object file
 test/test_aux.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_aux.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_aux.cpp.obj
 .PHONY : test/test_aux.cpp.obj
 
 test/test_aux.i: test/test_aux.cpp.i
@@ -283,7 +380,7 @@ test/test_aux.i: test/test_aux.cpp.i
 
 # target to preprocess a source file
 test/test_aux.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_aux.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_aux.cpp.i
 .PHONY : test/test_aux.cpp.i
 
 test/test_aux.s: test/test_aux.cpp.s
@@ -291,7 +388,7 @@ test/test_aux.s: test/test_aux.cpp.s
 
 # target to generate assembly for a file
 test/test_aux.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_aux.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_aux.cpp.s
 .PHONY : test/test_aux.cpp.s
 
 test/test_improc.obj: test/test_improc.cpp.obj
@@ -299,7 +396,7 @@ test/test_improc.obj: test/test_improc.cpp.obj
 
 # target to build an object file
 test/test_improc.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_improc.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_improc.cpp.obj
 .PHONY : test/test_improc.cpp.obj
 
 test/test_improc.i: test/test_improc.cpp.i
@@ -307,7 +404,7 @@ test/test_improc.i: test/test_improc.cpp.i
 
 # target to preprocess a source file
 test/test_improc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_improc.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_improc.cpp.i
 .PHONY : test/test_improc.cpp.i
 
 test/test_improc.s: test/test_improc.cpp.s
@@ -315,7 +412,7 @@ test/test_improc.s: test/test_improc.cpp.s
 
 # target to generate assembly for a file
 test/test_improc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_improc.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_improc.cpp.s
 .PHONY : test/test_improc.cpp.s
 
 test/test_imqueue.obj: test/test_imqueue.cpp.obj
@@ -323,7 +420,7 @@ test/test_imqueue.obj: test/test_imqueue.cpp.obj
 
 # target to build an object file
 test/test_imqueue.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_imqueue.cpp.obj
 .PHONY : test/test_imqueue.cpp.obj
 
 test/test_imqueue.i: test/test_imqueue.cpp.i
@@ -331,7 +428,7 @@ test/test_imqueue.i: test/test_imqueue.cpp.i
 
 # target to preprocess a source file
 test/test_imqueue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_imqueue.cpp.i
 .PHONY : test/test_imqueue.cpp.i
 
 test/test_imqueue.s: test/test_imqueue.cpp.s
@@ -339,7 +436,7 @@ test/test_imqueue.s: test/test_imqueue.cpp.s
 
 # target to generate assembly for a file
 test/test_imqueue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_imqueue.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_imqueue.cpp.s
 .PHONY : test/test_imqueue.cpp.s
 
 test/test_io.obj: test/test_io.cpp.obj
@@ -347,7 +444,7 @@ test/test_io.obj: test/test_io.cpp.obj
 
 # target to build an object file
 test/test_io.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_io.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_io.cpp.obj
 .PHONY : test/test_io.cpp.obj
 
 test/test_io.i: test/test_io.cpp.i
@@ -355,7 +452,7 @@ test/test_io.i: test/test_io.cpp.i
 
 # target to preprocess a source file
 test/test_io.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_io.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_io.cpp.i
 .PHONY : test/test_io.cpp.i
 
 test/test_io.s: test/test_io.cpp.s
@@ -363,7 +460,7 @@ test/test_io.s: test/test_io.cpp.s
 
 # target to generate assembly for a file
 test/test_io.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__test.dir\build.make CMakeFiles/image_processor__test.dir/test/test_io.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\image_processor__skeleton__test.dir\build.make CMakeFiles/image_processor__skeleton__test.dir/test/test_io.cpp.s
 .PHONY : test/test_io.cpp.s
 
 # Help Target
@@ -373,9 +470,17 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... image_processor__debug
-	@echo ... image_processor__test
+	@echo ... image_processor__skeleton__test
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

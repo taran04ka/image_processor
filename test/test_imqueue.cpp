@@ -1,5 +1,5 @@
-#include "D:/ProgramData/CLion/agh/mdig-agh-lang_cpp__exercises__en-b8fe6a7ea81f/googletest-master/googlemock/include/gmock/gmock.h"
-#include "D:/ProgramData/CLion/agh/mdig-agh-lang_cpp__exercises__en-b8fe6a7ea81f/googletest-master/googletest/include/gtest/gtest.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 #include "imqueue.hpp"
 

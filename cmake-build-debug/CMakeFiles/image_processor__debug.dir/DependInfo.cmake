@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/ProgramData/CLion/agh/improc/main.c" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir/main.c.obj"
   "D:/ProgramData/CLion/agh/improc/src/bitmap.c" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir/src/bitmap.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
@@ -19,6 +18,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/ProgramData/CLion/agh/improc/main.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir/main.cpp.obj"
   "D:/ProgramData/CLion/agh/improc/src/improc.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir/src/improc.cpp.obj"
   "D:/ProgramData/CLion/agh/improc/src/imqueue.cpp" "D:/ProgramData/CLion/agh/improc/cmake-build-debug/CMakeFiles/image_processor__debug.dir/src/imqueue.cpp.obj"
   )
