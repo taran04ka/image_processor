@@ -1,9 +1,9 @@
 #include "imqueue.hpp"
 #include "improc.hpp"
 
-Image TaskData::processing_function(const Image &im_in) {
+/*Image TaskData::processing_function(const Image &im_in) {
     return filter(im_in, get_averaging_mask(3));
-}
+}*/
 
 void TaskQueue::add_task(std::string task_id, TaskData task) {
     queue[task_id] = task;

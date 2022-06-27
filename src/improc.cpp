@@ -43,23 +43,10 @@ Matrix<T>::Matrix(const Matrix &current) : r_(current.r_), c_(current.c_) {
         }
     }
 #else
-    r_ = current.r_;
-    c_ = current.c_;
-    for (int i = 0; i < r_; i++) {
+    for (std::size_t i = 0; i < r_; i++) {
         m_.push_back(current[i]);
         //std::copy(current.begin(), current.end(), std::back_inserter(m_[i]));
     }
-#endif
-}
-
-template<typename T>
-Matrix<T>::~Matrix() {
-#if MATRIX_DATA_TYPE == ARRAY_2D
-    for (std::size_t count = 0; count < r_; count++)
-        delete[] m_[count];
-    delete[] m_;
-#else
-
 #endif
 }
 
@@ -74,10 +61,8 @@ std::size_t Matrix<T>::get_ncols() const {
 }
 
 template<typename T>
-Matrix<T>::Matrix(std::size_t r, std::size_t c) {
+Matrix<T>::Matrix(std::size_t r, std::size_t c) : r_(r), c_(c) {
 #if MATRIX_DATA_TYPE == ARRAY_2D
-    r_ = r;
-    c_ = c;
     m_ = new T*[r_];
     for (std::size_t count = 0; count < r_; count++) {//for the T** type
         m_[count] = new T[c_];
@@ -110,7 +95,7 @@ public:
 
 Image load_bitmap(const std::string& filepath) {
     BITMAPFILEHEADER header;
-    BITMAPINFO *BitmapInfo = nullptr;
+    BITMAPINFO *BitmapInfo = new BITMAPINFO();
     byte* bitmapBytes = LoadDIBitmap(filepath.c_str(), &BitmapInfo, &header);
 
     if (!bitmapBytes) {
@@ -126,13 +111,15 @@ Image load_bitmap(const std::string& filepath) {
     /* see: https://en.wikipedia.org/wiki/BMP_file_format#Pixel_storage */
     size_t row_size = (bits_per_pixel * w + 31) / 32 * 4;
 
-    printf("Successfully loaded a %lux%lu image - %s.\n\n", h, w, filepath.c_str());
+    Image return_image(h,w,BitmapInfo, header);
 
-    byte** image_array = (byte**) malloc(sizeof(byte*) * h);
+    printf("Successfully loaded a %llu%llu image - %s.\n\n", h, w, filepath.c_str());
+
+    /*byte** image_array = (byte**) malloc(sizeof(byte*) * h);
     for (size_t i = 0; i < h; i++) {
         image_array[i] = (byte*) malloc(sizeof(byte) * w);
         memset(image_array[i], 0, w);
-    }
+    }*/
 
     byte* reader = bitmapBytes;
 
@@ -141,7 +128,7 @@ Image load_bitmap(const std::string& filepath) {
     for (size_t i = 0; i < h; ++i) {
         /* Copy values of pixels in an image row. */
         for (size_t j = 0; j < w; ++j) {
-            image_array[h - i - 1][j] = *reader;
+            return_image[h - i - 1][j] = (byte)*reader;
             ++reader;
         }
 
@@ -151,7 +138,7 @@ Image load_bitmap(const std::string& filepath) {
 
     free(bitmapBytes);
 
-    return {h,w,BitmapInfo,header};
+    return return_image;
 }
 
 int save_bitmap(const std::string& filename, const Image& image) {
@@ -193,9 +180,9 @@ BmpInfoUniquePtr copy_bitmapinfo(BITMAPINFO *bmi, BITMAPFILEHEADER hdr) {
     auto size = hdr.bfOffBits - 18;
 #endif
     auto * ptr = (BITMAPINFO*) new char [size];
-    bmi = (BITMAPINFO*) new char [size];
-    std::memcpy(bmi, ptr, size);
-    return BmpInfoUniquePtr (bmi);
+    //bmi = (BITMAPINFO*) new char [size];
+    std::memcpy(ptr, bmi, size);
+    return BmpInfoUniquePtr (ptr);
 }
 
 std::string to_string(const Image &im, ImagePrintMode print_mode) {
@@ -208,6 +195,7 @@ std::string to_string(const Image &im, ImagePrintMode print_mode) {
                 }
                 ost<<'\n';
             }
+            break;
         case NUMS:
 
             for (std::size_t i = 0; i < im.get_nrows(); i++) {
@@ -216,8 +204,11 @@ std::string to_string(const Image &im, ImagePrintMode print_mode) {
                 }
                 ost<<'\n';
             }
+            break;
     }
-    return ost.str();
+    std::string str = ost.str();
+    str.pop_back();
+    return str;
 }
 
 using Mask = Matrix<double>;
@@ -233,7 +224,7 @@ Image transform(const Image &im_in, std::function<byte(byte)> func) {
 }
 
 Mask get_averaging_mask(std::size_t n) {
-    return {n,n,1.0/(n*n)};
+    return {n,n,1.0/(double)(n*n)};   //maybe wrong casting to double
 }
 
 Image filter(const Image &im_in, const Mask &mask) {
@@ -251,12 +242,13 @@ Image filter(const Image &im_in, const Mask &mask) {
                     }else{
                         pixel_val = im_in[k - mask_length][l - mask_length];
                     }
-                    sum += (byte)(mask[k - i][l - j] * pixel_val);
+                    sum += (byte)(mask[k - i][l - j] * (double)pixel_val);            //maybe wrong casting to double
                 }
             }
             new_im[i][j] = sum;
         }
     }
+    return new_im;
 }
 
 Image::Image(const Image &current) : Matrix<byte>(current){

@@ -31,7 +31,15 @@ public:
     Matrix(std::size_t r, std::size_t c);
     Matrix(std::size_t r, std::size_t c, T v);
     Matrix(const Matrix& current);
-    ~Matrix();
+#if MATRIX_DATA_TYPE == ARRAY_2D
+    ~Matrix() {
+        for (std::size_t count = 0; count < r_; count++)
+            delete[] m_[count];
+        delete[] m_;
+    }
+#else
+    ~Matrix() = default;
+#endif
     std::size_t get_nrows() const;
     std::size_t get_ncols() const;
     void print() const;
@@ -66,6 +74,7 @@ public:
         }
     }
     Image(const Image& current);
+    ~Image() = default;
     const BITMAPFILEHEADER& get_bitmapheader() const { return hdr_; }
     BITMAPINFO* get_bitmapinfo() const { return bmi_; }
 };
