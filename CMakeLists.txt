@@ -5,7 +5,7 @@ project(${PROJECT_ID})
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_compile_options(-lstdc++fs -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion)
+add_compile_options(-Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion)
 
 if (WIN32)
     add_compile_options(-Wno-multichar)

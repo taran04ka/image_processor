@@ -44,7 +44,7 @@ TEST(ImIOTest, ReadImage) {
 }
 
 TEST(ImIOTest, WriteImage) {
-    std::string img_root = "../imgs/";
+    std::string img_root = "..\\imgs\\";
 
     std::string reference_filepath = img_root + "1x1_g127_win.bmp";
     Image reference_image = load_bitmap(reference_filepath);

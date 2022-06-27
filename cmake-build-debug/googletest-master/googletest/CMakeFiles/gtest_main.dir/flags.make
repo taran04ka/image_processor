@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/gtest_main.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -lstdc++fs -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=c++2a
+CXX_FLAGS = -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=c++2a
 

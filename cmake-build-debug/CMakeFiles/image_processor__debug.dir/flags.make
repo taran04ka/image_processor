@@ -7,11 +7,11 @@ C_DEFINES =
 
 C_INCLUDES = @CMakeFiles/image_processor__debug.dir/includes_C.rsp
 
-C_FLAGS = -g -lstdc++fs -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar
+C_FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = @CMakeFiles/image_processor__debug.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g -lstdc++fs -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu++2a
+CXX_FLAGS = -g -Wall -Wextra -Werror -Wpedantic -pedantic-errors -Wconversion -Wno-multichar -std=gnu++2a
 

@@ -8,14 +8,14 @@
 
 #define ARRAY_2D    1
 #define VECTOR_OF_VECTORS 2
-#define MATRIX_DATA_TYPE ARRAY_2D
+#define MATRIX_DATA_TYPE VECTOR_OF_VECTORS
 
 struct BmpInfoDeleter {
     void operator()(BITMAPINFO* ptr) { delete[] ptr; }
 };
 using BmpInfoUniquePtr = std::unique_ptr<BITMAPINFO, BmpInfoDeleter>;
 
-BmpInfoUniquePtr copy_bitmapinfo(BITMAPINFO* bmi, BITMAPFILEHEADER hdr);
+BmpInfoUniquePtr copy_bitmapinfo(BITMAPINFO *bmi, BITMAPFILEHEADER hdr);
 
 template<class T>
 #if MATRIX_DATA_TYPE == ARRAY_2D
@@ -60,11 +60,11 @@ private:
 class Image : public Matrix<byte>{
 private:
     BITMAPFILEHEADER hdr_;
-    BITMAPINFO * bmi_ = nullptr;
+    BmpInfoUniquePtr bmi_ = nullptr;
 public:
     Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPFILEHEADER hdr) : Matrix<byte>(h,w,0) {
         hdr_ = hdr;
-        bmi_ = copy_bitmapinfo(bmi, hdr).get();
+        bmi_ = copy_bitmapinfo(bmi, hdr);
     }
     Image(std::size_t h, std::size_t w, BITMAPINFO* bmi, BITMAPFILEHEADER hdr, data_type data) : Image(h, w, bmi, hdr) {
         for (std::size_t i = 0; i < h; i++) {
@@ -76,7 +76,7 @@ public:
     Image(const Image& current);
     ~Image() = default;
     const BITMAPFILEHEADER& get_bitmapheader() const { return hdr_; }
-    BITMAPINFO* get_bitmapinfo() const { return bmi_; }
+    BITMAPINFO* get_bitmapinfo() const { return bmi_.get(); }
 };
 
 enum ImagePrintMode {

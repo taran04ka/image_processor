@@ -113,7 +113,7 @@ Image load_bitmap(const std::string& filepath) {
 
     Image return_image(h,w,BitmapInfo, header);
 
-    printf("Successfully loaded a %llu%llu image - %s.\n\n", h, w, filepath.c_str());
+    printf("Successfully loaded a %zu%zu image - %s.\n\n", h, w, filepath.c_str());
 
     /*byte** image_array = (byte**) malloc(sizeof(byte*) * h);
     for (size_t i = 0; i < h; i++) {
@@ -173,13 +173,16 @@ int save_bitmap(const std::string& filename, const Image& image) {
 }
 
 BmpInfoUniquePtr copy_bitmapinfo(BITMAPINFO *bmi, BITMAPFILEHEADER hdr) {
+    if(bmi == nullptr){
+        return nullptr;
+    }
 #ifdef _WIN32
     auto size = hdr.bfOffBits - sizeof(BITMAPFILEHEADER);
 #endif
 #ifndef _WIN32
     auto size = hdr.bfOffBits - 18;
 #endif
-    auto * ptr = (BITMAPINFO*) new char [size];
+    BITMAPINFO * ptr = reinterpret_cast<BITMAPINFO*> (new char [size]);
     //bmi = (BITMAPINFO*) new char [size];
     std::memcpy(ptr, bmi, size);
     return BmpInfoUniquePtr (ptr);
@@ -217,7 +220,7 @@ Image transform(const Image &im_in, std::function<byte(byte)> func) {
     Image tmp(im_in);
     for (std::size_t i = 0; i < im_in.get_nrows(); i++) {
         for (std::size_t j = 0; j < im_in.get_ncols(); j++) {
-            func(tmp[i][j]);
+            tmp[i][j] = func(tmp[i][j]);
         }
     }
     return tmp;
@@ -251,7 +254,9 @@ Image filter(const Image &im_in, const Mask &mask) {
     return new_im;
 }
 
+
+
 Image::Image(const Image &current) : Matrix<byte>(current){
     hdr_ = current.hdr_;
-    bmi_ = copy_bitmapinfo(current.bmi_, current.hdr_).get();
+    bmi_ = copy_bitmapinfo(current.bmi_.get(), current.hdr_);
 }
